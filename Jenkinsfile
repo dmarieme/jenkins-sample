@@ -9,7 +9,6 @@ node () {
 	}
 	stage ('App-IC - Clean') {
  	
-// Unable to convert a build step referring to "hudson.plugins.sonar.SonarBuildWrapper". Please verify and convert manually if required.		// Maven build step
 	withMaven(maven: 'maven') { 
  			if(isUnix()) {
  				sh "mvn clean " 
@@ -48,19 +47,8 @@ node () {
  		}
 	}
 	
-	
-	stage ('APP-IC - Quality Analysis') {
-	withMaven(maven: 'maven') { 
- 			if(isUnix()) {
- 				sh "mvn sonar:sonar" 
-			} else { 
- 				bat "mvn sonar:sonar" 
-			} 
- 		} 
-       }
-	
 	stage('Quality check') {
-	  withSonarQubeEnv('Sona') {
+	  withSonarQubeEnv('Sonar') {
 	  bat "mvn sonar:sonar"
    }
 		
