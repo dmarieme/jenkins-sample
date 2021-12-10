@@ -48,6 +48,7 @@ node () {
  		}
 	}
 	
+	
 	stage ('APP-IC - Quality Analysis') {
 	withMaven(maven: 'maven') { 
  			if(isUnix()) {
@@ -57,6 +58,14 @@ node () {
 			} 
  		} 
        }
+	
+	stage('Quality check') {
+	  withSonarQubeEnv('Sonar') {
+	  bat "mvn sonar:sonar"
+   }
+		
+} 
+
 	
 }
 }
