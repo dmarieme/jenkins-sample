@@ -9,11 +9,11 @@
   <url>http://maven.apache.org</url>
   
   <properties>
-  <sonar.organization>bnasslahsen</sonar.organization>
-  <sonar.projectKey>bnasslahsen_jenkins-sample</sonar.projectKey>
+  <sonar.organization>dmarieme</sonar.organization>
+  <sonar.projectKey>dmarieme_jenkins-sample</sonar.projectKey>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
  </properties>
-  
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
