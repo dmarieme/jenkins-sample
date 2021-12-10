@@ -60,7 +60,7 @@ node () {
        }
 	
 	stage('Quality check') {
-	  withSonarQubeEnv('Sonar') {
+	  withSonarQubeEnv('Sona') {
 	  bat "mvn sonar:sonar"
    }
 		
